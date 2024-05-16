@@ -1,5 +1,6 @@
 package com.example.roooom
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -16,6 +17,8 @@ class AddCarActivity : AppCompatActivity() {
         binding = ActivityAddCarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.back.setOnClickListener { close() }
+
         val db = CarDatabase.getDatabase(this)
         carDao = db.carDao()
 
@@ -25,11 +28,15 @@ class AddCarActivity : AppCompatActivity() {
 
             if (name.isNotEmpty() && year != null) {
                 lifecycleScope.launch(Dispatchers.IO) {
-                    carDao.insertCar(Car(name, year))
+                    carDao.insertCar(Car(name = name, year = year))
                 }
                 finish()
             }
         }
     }
+    fun close() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 }
-
