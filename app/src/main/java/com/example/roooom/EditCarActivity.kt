@@ -26,6 +26,8 @@ class EditCarActivity : AppCompatActivity() {
         carId = intent.getLongExtra("CAR_ID", 0)
         val carName = intent.getStringExtra("CAR_NAME") ?: ""
         val carYear = intent.getIntExtra("CAR_YEAR", 0)
+        val carNalichie = intent.getStringExtra("NALICHIE") ?: ""
+        val carPrice = intent.getStringExtra("PRICE") ?: ""
 
         binding.etCarName.setText(carName)
         binding.etCarYear.setText(carYear.toString())
@@ -40,10 +42,11 @@ class EditCarActivity : AppCompatActivity() {
         binding.btnUpdate.setOnClickListener {
             val name = binding.etCarName.text.toString()
             val year = binding.etCarYear.text.toString().toIntOrNull()
-
+            val nalichie = binding.nalichieText.text.toString()
+            val price = binding.priceText.text.toString()
             if (name.isNotEmpty() && year != null) {
                 lifecycleScope.launch(Dispatchers.IO) {
-                    carDao.updateCar(Car(id = carId, name = name, year = year))
+                    carDao.updateCar(Car(id = carId, name = name, year = year, nalichie = nalichie, price = price))
                     finish()
                 }
             } else {

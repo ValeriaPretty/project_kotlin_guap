@@ -17,30 +17,27 @@
     <!-- Кнопки Обновить и Удалить -->
 
     <EditText
-        android:id="@+id/etCarYear"
+        android:id="@+id/etCarName"
         android:layout_width="288dp"
         android:layout_height="69dp"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="112dp"
         android:layout_marginEnd="75dp"
-        android:layout_marginBottom="259dp"
         android:background="#D6D6D6"
-        android:hint="Введите год выпуска"
-        android:inputType="number"
+        android:hint="Введите название машины"
         android:padding="16dp"
         android:textColorHint="#353333"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCarName" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvCarYearLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:text="Год выпуска"
         android:textColor="@android:color/black"
         android:textSize="16sp"
@@ -49,11 +46,33 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etCarYear" />
 
+    /////
+
+    ///////
+
+    <EditText
+        android:id="@+id/etCarYear"
+        android:layout_width="288dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="75dp"
+        android:background="#D6D6D6"
+        android:hint="Введите год выпуска"
+        android:inputType="number"
+        android:padding="16dp"
+        android:textColorHint="#353333"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCarName" />
+
     <TextView
         android:id="@+id/tvCarNameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:text="Название машины"
         android:textColor="@android:color/black"
         android:textSize="16sp"
@@ -63,21 +82,60 @@
         app:layout_constraintStart_toStartOf="@+id/etCarName" />
 
     <EditText
-        android:id="@+id/etCarName"
+        android:id="@+id/price_text"
         android:layout_width="288dp"
         android:layout_height="69dp"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="240dp"
-        android:layout_marginEnd="75dp"
+        android:layout_marginTop="32dp"
         android:background="#D6D6D6"
-        android:hint="Введите название машины"
+        android:hint="Введите цену машины"
         android:padding="16dp"
         android:textColorHint="#353333"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/nalichie_text" />
+
+    <TextView
+        android:id="@+id/price_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Цена машины"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/price_text"
+        app:layout_constraintEnd_toEndOf="@+id/price_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/price_text" />
+
+    <EditText
+        android:id="@+id/nalichie_text"
+        android:layout_width="288dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="32dp"
+        android:background="#D6D6D6"
+        android:hint="Наличие машины"
+        android:inputType="number"
+        android:padding="16dp"
+        android:textColorHint="#353333"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCarYear" />
+
+    <TextView
+        android:id="@+id/nalichie_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Наличие машины"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/nalichie_text"
+        app:layout_constraintEnd_toEndOf="@+id/nalichie_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nalichie_text" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -95,8 +153,7 @@
         android:id="@+id/btnAdd"
         android:layout_width="115dp"
         android:layout_height="40dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginBottom="185dp"
+        android:layout_marginBottom="28dp"
         android:layout_weight="1"
         android:backgroundTint="#673AB7"
         android:text="Добавить"
@@ -104,7 +161,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCarYear" />
+        app:layout_constraintTop_toBottomOf="@+id/price_text" />
 
     <ImageButton
         android:id="@+id/back"
@@ -119,4 +176,5 @@
         app:layout_constraintVertical_bias="0.095"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 

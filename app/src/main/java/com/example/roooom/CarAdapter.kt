@@ -24,6 +24,10 @@ class CarAdapter : ListAdapter<Car, CarAdapter.CarViewHolder>(DiffCallback()) {
         fun bind(car: Car) {
             binding.tvCarName.text = car.name
             binding.tvCarYear.text = car.year.toString()
+            binding.nalichie.text = car.nalichie
+            binding.price.text = car.price
+
+
 
             itemView.setOnClickListener {
                 val context = itemView.context
@@ -31,6 +35,8 @@ class CarAdapter : ListAdapter<Car, CarAdapter.CarViewHolder>(DiffCallback()) {
                     putExtra("CAR_ID", car.id)
                     putExtra("CAR_NAME", car.name)
                     putExtra("CAR_YEAR", car.year)
+                    putExtra("NALICHIE", car.nalichie)
+                    putExtra("PRICE", car.price)
                 }
                 context.startActivity(intent)
             }
@@ -47,3 +53,4 @@ class CarAdapter : ListAdapter<Car, CarAdapter.CarViewHolder>(DiffCallback()) {
         }
     }
 }
+

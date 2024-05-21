@@ -33,6 +33,18 @@
                 android:text="Год выпуска"
                 android:textSize="16sp" />
 
+            <TextView
+                android:id="@+id/nalichie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Наличие" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Цена" />
+
         </LinearLayout>
 
         <ImageView

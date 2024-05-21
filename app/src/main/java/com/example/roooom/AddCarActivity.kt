@@ -25,10 +25,13 @@ class AddCarActivity : AppCompatActivity() {
         binding.btnAdd.setOnClickListener {
             val name = binding.etCarName.text.toString()
             val year = binding.etCarYear.text.toString().toIntOrNull()
+            val nalichie = binding.priceText.text.toString()
+            val price = binding.nalichieText.text.toString()
+
 
             if (name.isNotEmpty() && year != null) {
                 lifecycleScope.launch(Dispatchers.IO) {
-                    carDao.insertCar(Car(name = name, year = year))
+                    carDao.insertCar(Car(name = name, year = year, nalichie = nalichie, price = price))
                 }
                 finish()
             }
@@ -40,3 +43,4 @@ class AddCarActivity : AppCompatActivity() {
         finish()
     }
 }
+

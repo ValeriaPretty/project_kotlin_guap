@@ -8,5 +8,7 @@ data class Car(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
     val name: String,
-    val year: Int
+    val year: Int,
+    val nalichie: String,
+    val price: String
 )
